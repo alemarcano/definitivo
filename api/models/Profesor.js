@@ -20,7 +20,7 @@ module.exports = {
 
   
       cedula: {
-        type: 'float',
+        type: 'integer',
         required: true,
         defaultsTo: '8315735'
       
@@ -50,7 +50,7 @@ module.exports = {
       },
   
         telefono: {
-        type: 'float',
+        type: 'integer',
         required: true,
         defaultsTo: '0212212321'
         

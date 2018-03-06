@@ -1,0 +1,52 @@
+<div id="container">
+    
+        <h1><%= 'Nombre: '+profesor.nombre %></h1>
+        <hr>
+        <h1><%= 'Apellido: '+profesor.apellido %></h1>
+        <hr>
+        <h2><%= 'Cedula: '+profesor.cedula %></h1>
+        <hr>
+        <h3><%= 'Telefono: '+profesor.telefono%></h1>
+        <hr>
+        <h4><%= 'Especialidad: ' +profesor.especialidad %></h1>
+        <hr>
+        
+        
+        
+        </div>
+        <div id="container">
+        <h3> estructura</h3>
+        <form action="/estructura/new" method="POST">
+          <input type="hidden" value= "<%= profesor.id %>" name="profesor">
+        <input type="submit" value= "Agregar estructura" />
+        </form>
+        <table>
+        <tr>
+          <th> ID </th>
+          <th> estructura </th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <% _.each(profesor.estructura,function(estructura){ %>
+          <tr data=id="<%= estructura.id %>" data-model="estructura">
+          <td><%= estructura.id %></td>
+          <td><%= estructura.intervencion %></td>
+        
+          <td><a href="profesor/destroy/<%= profesor.id %>">Eliminar</a></td>
+        </tr>
+        <% }) %>
+        </table>
+        <form action="/seccion/new" method="POST">
+          <input type="hidden" value= "<%= profesor.id %>" name="profesor">
+          <input type="submit" value= "Agregar seccion" />
+        </form>
+        </div>
+        <div id="container">
+        <a class="button" href="/profesor"> Regresar </a>
+        <a class="button" href="/profesor/edit/%=profesor.id%"> Editar </a>(help)
+        </div>
+        
+        <a class="button" href="/profesor"> Regresar </a>
+        </div>
+        
