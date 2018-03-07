@@ -36,6 +36,20 @@ module.exports = {
 
 
 
+	menu: function(req,res,next){
+        Estudiante.findOne({cedula:req.param('cedulaEstudiante')}).exec(function(err,estudiante){
+            if(err){
+                return res.json(500,{error: 'Some error ocurred'});
+                sails.log('El ID introducido no existe en la BD');
+            }
+            sails.log(estudiante)
+           res.view({
+        	estudiante:estudiante
+           });
+        })
+	},
+
+
 	edit: function(req,res,next){
 		//body
 		Estudiante.findOne(req.param('id'), function estudianteFounded(err,estudiante) {

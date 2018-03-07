@@ -20,8 +20,8 @@ module.exports = {
 
     nombre: {
       type: 'string',
-      required: true,
-      defaultsTo: 'Juan'
+      required: true
+   
       
     },
 
