@@ -21,17 +21,19 @@ module.exports = {
 		});
 	},
 
-	show: function(req,res, next){
-		//body
-		Estudiante.findOne(req.param('id'), function estudianteFounded(err,estudiante) {
-			if (err)
-				return next(err);
-		
+
+	show: function(req, res, next){
+		Estudiante.findOne(req.param('id')).populateAll().exec(function(err,estudiante){
+			if(err) return next(err);
+			if(!estudiante) return next();
+			console.log(estudiante)
 			res.view({
 				estudiante: estudiante
-			});
 
+			});
 		});
+
+
 	},
 
 

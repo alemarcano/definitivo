@@ -204,43 +204,44 @@
     </footer>
     <section class="contact">
       <div class="container">
-        <div class="row">
-          <div class="contact-caption clearfix">
+        <div>
+          <div class="contact-captionx">
             <div class="contact-heading text-center">
               <h2>Ingresa al Sistema</h2>
             </div>
-            <div class="col-md-5 contact-info text-left">
-              <h3>Soy Estudiante</h3>
-              <div class="contact-form">
-                <form class="form" action="/estudiante/menu" method="post">
-                  <h3 style="text-align: left">Ingrese su cedula:</h3>
-                  <input class="cedula" type="number" min="1" placeholder="cedula del estudiante" name="cedulaEstudiante">
-                  <input class="submit-btn" type="submit" value="INGRESAR">
-                  <br>
-                </form>
-  
-                <form action="/estudiante/new">
-                  <br>
-                  <h3 style="text-align: left"> No estas registrado?</h3>
-                  <input class="submit-btn" type="submit" value="REGISTRARSE">
-                </form>
+            <div class="d-flex flex-row justify-content-centert">
+              <div class="contact-info">
+                <h3>Soy Estudiante</h3>
+                <div class="contact-form">
+                  <form class="form" action="/estudiante/menu" method="post">
+                    <h3 style="text-align: left">Ingrese su cedula:</h3>
+                    <input class="cedula" type="number" min="1" placeholder="cedula del estudiante" name="cedulaEstudiante">
+                    <input class="submit-btn" type="submit" value="INGRESAR">
+                    <br>
+                  </form>
+    
+                  <form action="/estudiante/new">
+                    <br>
+                    <h3 style="text-align: left"> No estas registrado?</h3>
+                    <input class="submit-btn" type="submit" value="REGISTRARSE">
+                  </form>
+                </div>
               </div>
-            </div>
-            <div class="col-md-5 col-md-offset-1 contact-info">
-              <h3>Soy Medico</h3>
-              <div class="contact-form">
-                <form class="form"  action="/Doctor/menu" method="POST">
-                  <h3 style="text-align: left">Ingrese su cedula:</h3>
-                  <input class="cedula" type="number" min="1" placeholder="cedula del doctor" name="cedulaDoctor">
-                  <input class="submit-btn" type="submit" value="INGRESAR">
-                  <br>
-                </form>
-                <form class="form" action="/Doctor/registrar" method="post" >
-                  <br>
-                  <h3 style="text-align: left"> No estas registrado?</h3>
-                  <input class="submit-btn" type="submit" value="REGISTRARSE">
-                </form>
-  
+              <div class="contact-info">
+                <h3>Soy Profesor</h3>
+                <div class="contact-form">
+                  <form class="form"  action="/profesor/menu" method="POST">
+                    <h3 style="text-align: left">Ingrese su cedula:</h3>
+                    <input class="cedula" type="number" min="1" placeholder="cedula del doctor" name="cedulaDoctor">
+                    <input class="submit-btn" type="submit" value="INGRESAR">
+                    <br>
+                  </form>
+                  <form class="form" action="/profesor/new" method="post" >
+                    <br>
+                    <h3 style="text-align: left"> No estas registrado?</h3>
+                    <input class="submit-btn" type="submit" value="REGISTRARSE">
+                  </form>  
+              </div>
             </div>
           </div>
         </div>

@@ -21,17 +21,30 @@ module.exports = {
 		});
 	},
 
-	show: function(req,res, next){
-		//body
-		Profesor.findOne(req.param('id'), function profesorFounded(err,profesor) {
-			if (err)
-				return next(err);
-		
+	show: function(req, res, next){
+		Profesor.findOne(req.param('id')).populateAll().exec(function(err,profesor){
+			if(err) return next(err);
+			if(!profesor) return next();
 			res.view({
 				profesor: profesor
-			});
 
+			});
 		});
+
+
+	},
+
+	menu: function(req,res,next){
+        Profesor.findOne({cedula:req.param('cedulaProfesor')}).exec(function(err,profesor){
+            if(err){
+                return res.json(500,{error: 'Some error ocurred'});
+                sails.log('El ID introducido no existe en la BD');
+            }
+            sails.log(profesor)
+           res.view({
+        	profesor:profesor
+           });
+        })
 	},
 
 
